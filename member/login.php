@@ -1,75 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>let's go</title>
-    <script src="https://kit.fontawesome.com/c47106c6a7.js" crossorigin="anoymous"></script>
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/login.css">
-    <script defer src="js/ie.js"></script>
+	<title>Login V14</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!--===============================================================================================-->
+	<link rel="icon" type="image/png" href="images/icons/favicon.ico" />
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/Linearicons-Free-v1.0.0/icon-font.min.css">
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="css/util.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<!--===============================================================================================-->
 </head>
+
 <body>
-    <header>
-        <div class="inner">
-            <h1><a href="../main.php">제목</a></h1>
 
-            <ul id="gnb">
-                <li><a href="#">1</a></li>
-                <li><a href="#">2</a></li>
-                <li><a href="#">3</a></li>
-                <li><a href="#">4</a></li>
-                <li><a href="#">5</a></li>
-            </ul>
+	<div class="limiter">
+		<div class="container-login100">
+			<div class="wrap-login100 p-l-85 p-r-85 p-t-55 p-b-55">
+				<form class="login100-form validate-form flex-sb flex-w" action="member_process.php?mode=login" method="post">
+					<span class="login100-form-title p-b-32">
+						Account Login
+					</span>
 
-            <ul class="util">
-              <?php if(!isset($_SESSION['userid'])){
-                echo '<li><a href="../member/login.php">Login</a></li>';
-                echo '<li><a href="../member/register.php">Join</a></li>';
-              } else {
-                echo '<div class="helloUser">Welcome '.$_SESSION['name'].'!</li>';
-                echo '<li><a href="member/member_process.php?mode=logout">Log out</a></li>';
-                echo '<li><a href="member/update.php">Info</a></li>';
-              }
-              ?>
-                <!-- <li><a href="#">Login</a></li>
-                <li><a href="member/register.php">Join</a></li> -->
-            </ul>
-        </div>
-    </header>
-    <section>
-       <div class="mainCon">
-           <div class="loginTitle">로그인</div>
-           <form action="member_process.php?mode=login" method="post" class="loginForm">
-               <p class="loginId">아이디 : <input type="text" name="userid"></p>
-               <p class="loginPw">비밀번호 : <input type="password" name="pw"></p>
-               <div class="loginButton">
-               <input type="submit" value="로그인">
-               <input type="button" value="취소" onclick="location.href='../main.php'">
-               </div>
-           </form>
-           <div class="registerAndFind">
-           <a href="register.php">회원가입</a>&nbsp;|
-           <a href="">아이디/비밀번호 찾기</a>
-           </div>
-       </div>
-   </section>
-   <footer>
-        <div class="inner">
-        <div class="upper">
-            <h1>NAME</h1>
+					<span class="txt1 p-b-11">
+						Username
+					</span>
+					<div class="wrap-input100 validate-input m-b-36" data-validate="Username is required">
+						<input class="input100" type="text" name="id">
+						<span class="focus-input100"></span>
+					</div>
 
-        </div>
+					<span class="txt1 p-b-11">
+						Password
+					</span>
+					<div class="wrap-input100 validate-input m-b-12" data-validate="Password is required">
+						<span class="btn-show-pass">
+							<i class="fa fa-eye"></i>
+						</span>
+						<input class="input100" type="password" name="pw1">
+						<span class="focus-input100"></span>
+					</div>
 
-        <div class="lower">
-            <address>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum, sunt?<br>
-                TEL : XXX-XXX-XXXX C.P : 010-5193-6603
-            </address>
-            <p>2021 Database System TEAM '도원결의' &copy; copyright all right reserved.</p>
-        </div>
-        </div>
-    </footer>
+					<div class="flex-sb-m w-full p-b-48">
+
+						<div>
+							<a href="#" class="txt3">
+								Forgot Password?
+							</a>
+						</div>
+					</div>
+
+					<div class="container-login100-form-btn">
+						<button class="login100-form-btn" type="submit">
+							Login
+						</button>
+					</div>
+
+				</form>
+			</div>
+		</div>
+	</div>
+
+
+	<div id="dropDownSelect1"></div>
+
+	<!--===============================================================================================-->
+	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+	<!--===============================================================================================-->
+	<script src="vendor/animsition/js/animsition.min.js"></script>
+	<!--===============================================================================================-->
+	<script src="vendor/bootstrap/js/popper.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+	<!--===============================================================================================-->
+	<script src="vendor/select2/select2.min.js"></script>
+	<!--===============================================================================================-->
+	<script src="vendor/daterangepicker/moment.min.js"></script>
+	<script src="vendor/daterangepicker/daterangepicker.js"></script>
+	<!--===============================================================================================-->
+	<script src="vendor/countdowntime/countdowntime.js"></script>
+	<!--===============================================================================================-->
+	<script src="js/main.js"></script>
+
 </body>
+
 </html>

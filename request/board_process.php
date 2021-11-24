@@ -1,6 +1,6 @@
 <?php
     require_once('../db/db.php');
-
+    session_start();
    
     $name = $_POST['name'];
     $pw = $_POST['pw'];
@@ -20,18 +20,4 @@
     $sql -> execute();
     header('location:../main.php');
 
-
-
-
-    // $date = date('Y-m-d');
-    // if($username && $userpw && $title && $content){
-    //     $sql = mq("insert into request(name,pw,title,content,date) values('".$username."','".$userpw."','".$title."','".$content."','".$date."')"); 
-    //     echo "<script>
-    //     alert('글쓰기 완료되었습니다.');
-    //     location.href='/';</script>";
-    // }else{
-    //     echo "<script>
-    //     alert('글쓰기에 실패했습니다.');
-    //     history.back();</script>";
-    // }
 ?>

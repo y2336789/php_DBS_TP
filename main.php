@@ -1,21 +1,23 @@
 <!DOCTYPE html>
 <?php
-    session_start();
+session_start();
 ?>
 <html>
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>let's go</title>
+    <title>Welcome </title>
     <script src="https://kit.fontawesome.com/c47106c6a7.js" crossorigin="anoymous"></script>
     <link rel="stylesheet" href="css/style.css">
     <script defer src="js/ie.js"></script>
 </head>
+
 <body>
     <header>
         <div class="inner">
-            <h1><a href="main.php">제목</a></h1>
+            <h1><a href="main.php">Be Native</a></h1>
 
             <ul id="gnb">
                 <li><a href="#">1</a></li>
@@ -26,17 +28,15 @@
             </ul>
 
             <ul class="util">
-              <?php if(!isset($_SESSION['userid'])){
-                echo '<li><a href="member/login.php">Login</a></li>';
-                echo '<li><a href="member/register.php">Join</a></li>';
-              } else {
-                echo '<div class="helloUser">Welcome '.$_SESSION['name'].'!</li>';
-                echo '<li><a href="member/member_process.php?mode=logout">Log out</a></li>';
-                echo '<li><a href="member/update.php">Info</a></li>';
-              }
-              ?>
-                <!-- <li><a href="#">Login</a></li>
-                <li><a href="member/register.php">Join</a></li> -->
+                <?php if (!isset($_SESSION['id'])) {
+                    echo '<li><a href="member/login.php">Login</a></li>';
+                    echo '<li><a href="member/register.php">Join</a></li>';
+                } else {
+                    echo '<div class="helloUser">Welcome ' . $_SESSION['name'] . '!</li>';
+                    echo '<li><a href="member/member_process.php?mode=logout">Log out</a></li>';
+                    echo '<li><a href="member/update.php">Info</a></li>';
+                }
+                ?>
             </ul>
         </div>
     </header>
@@ -45,7 +45,7 @@
         <div class="inner">
             <h1>Do you know Korean Slang?</h1>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum, labore. Soluta, error! Beatae blanditiis quam ut modi nemo porro at voluptatibus iste adipisci! Provident!</p>
-            <a href="#">view detail</a>
+            <a href="member/register.php">Join us!</a>
         </div>
     </figure>
     <section class="introduce">
@@ -74,19 +74,20 @@
     </section>
     <footer>
         <div class="inner">
-        <div class="upper">
-            <h1>NAME</h1>
+            <div class="upper">
+                <h1>NAME</h1>
 
-        </div>
+            </div>
 
-        <div class="lower">
-            <address>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum, sunt?<br>
-                TEL : XXX-XXX-XXXX C.P : 010-5193-6603
-            </address>
-            <p>2021 Database System TEAM '도원결의' &copy; copyright all right reserved.</p>
-        </div>
+            <div class="lower">
+                <address>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum, sunt?<br>
+                    TEL : XXX-XXX-XXXX C.P : 010-5193-6603
+                </address>
+                <p>2021 Database System TEAM '도원결의' &copy; copyright all right reserved.</p>
+            </div>
         </div>
     </footer>
 </body>
+
 </html>
