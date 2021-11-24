@@ -1,0 +1,36 @@
+.mainCon {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+header {
+  margin-bottom: 40px;
+}
+
+.registerTitle {
+  margin-bottom: 20px;
+  font: bold 30px/1 "arial";
+  color: #444;
+}
+
+.registerTable {
+  height: 33vh;
+  margin: 0 auto;
+  font: bold 15px/1 "arial";
+  color: #444;
+}
+
+.registerTable tr {
+  margin-bottom: 50px;
+}
+
+.registerTable tr:first-child input {
+  margin-left: 2px;
+}
+
+footer {
+  width: 100%;
+  background: #333;
+  /* padding: 100px 0px; */
+  border-top: 1px solid #888;
+}

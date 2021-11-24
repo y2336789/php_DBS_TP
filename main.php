@@ -15,12 +15,12 @@
 <body>
     <header>
         <div class="inner">
-            <h1><a href="#">제목</a></h1>
+            <h1><a href="main.php">제목</a></h1>
 
             <ul id="gnb">
                 <li><a href="#">1</a></li>
                 <li><a href="#">2</a></li>
-                <li><a href="#">3</a></li>
+                <li><a href="request/board.php">Request</a></li>
                 <li><a href="#">4</a></li>
                 <li><a href="#">5</a></li>
             </ul>
@@ -30,7 +30,7 @@
                 echo '<li><a href="member/login.php">Login</a></li>';
                 echo '<li><a href="member/register.php">Join</a></li>';
               } else {
-                echo '<div class="helloUser">'.$_SESSION['name'].'님 환영합니다.</li>';
+                echo '<div class="helloUser">Welcome '.$_SESSION['name'].'!</li>';
                 echo '<li><a href="member/member_process.php?mode=logout">Log out</a></li>';
                 echo '<li><a href="member/update.php">Info</a></li>';
               }
@@ -48,7 +48,7 @@
             <a href="#">view detail</a>
         </div>
     </figure>
-    <section>
+    <section class="introduce">
         <div class="inner">
             <h1>Introduction of service</h1>
             <div class="wrap">

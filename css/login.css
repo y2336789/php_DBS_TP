@@ -1,0 +1,28 @@
+.mainCon {
+  text-align: center;
+  font: bold 15px/1 "arial";
+  color: #444;
+  margin-bottom: 50px;
+}
+
+header {
+  margin-bottom: 40px;
+}
+
+.loginTitle {
+  margin-bottom: 20px;
+  font: bold 30px/1 "arial";
+  color: #444;
+}
+
+.loginForm input {
+  margin-left: 12px;
+}
+
+.loginForm p {
+  margin-bottom: 20px;
+}
+
+.loginButton {
+  margin-bottom: 20px;
+}
