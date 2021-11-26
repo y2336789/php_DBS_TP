@@ -1,5 +1,10 @@
+header {
+	margin-bottom: 90px;
+}
+
 #board_read {
-	width:900px;
+	margin: 0 auto;
+	width:50%;
 	position: relative;
 	word-break:break-all;
 }
@@ -29,3 +34,12 @@
 	float:left;
 	margin-left:10px;
 }
+
+footer {
+	width: 100%;
+	background: #333;
+	padding: 100px 0px;
+	border-top: 1px solid #888;
+	bottom: 0px;
+	position: absolute;
+  }

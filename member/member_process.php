@@ -11,7 +11,7 @@ switch ($_GET['mode']) {
         $email = $_POST['email'];
 
         $sql = $db->prepare('INSERT INTO register
-        (id, pw, name, tel, email, redate) /*이 부분은 DB 테이블에서 만든 이름과 똑같이 입력해줍니다.*/
+        (id, pw, name, tel, email, redate)
         VALUE(:id, :pw, :name, :tel, :email, now())');
 
         $sql->bindParam(':id', $id);

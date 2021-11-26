@@ -32,8 +32,8 @@ $sql->execute();
 
             <ul class="util">
                 <?php if (!isset($_SESSION['id'])) {
-                    echo '<li><a href="member/login.php">Login</a></li>';
-                    echo '<li><a href="member/register.php">Join</a></li>';
+                    echo '<li><a href="../member/login.php">Login</a></li>';
+                    echo '<li><a href="../member/register.php">Join</a></li>';
                 } else {
                     echo '<div class="helloUser">Welcome ' . $_SESSION['name'] . '!</li>';
                     echo '<li><a href="../member/member_process.php?mode=logout">Log out</a></li>';
@@ -62,7 +62,7 @@ $sql->execute();
                 <tbody>
                     <tr>
                         <td width="70"><?= $request['idx'] ?></td>
-                        <td width="500"><a href=""><?= $request['title'] ?></a></td>
+                        <td width="500"><a href="read.php?idx=<?= $request['idx'] ?>"><?= $request['title'] ?></a></td>
                         <td width="120"><?= $request['name'] ?></td>
                         <td width="100"><?= $request['date'] ?></td>
                         <td width="100"><?= $request['hits'] ?></td>

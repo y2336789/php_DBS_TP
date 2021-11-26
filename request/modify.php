@@ -1,8 +1,15 @@
-<!DOCTYPE html>
 <?php
 session_start();
+require_once('../db/db.php');
+
+$bno = $_GET['idx'];
+$sql = $db->prepare("SELECT * FROM request WHERE idx=:idx");
+$sql->bindParam("idx", $_SESSION['idx']);
+$sql->execute();
 ?>
+<!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -42,27 +49,25 @@ session_start();
     </header>
     <div id="board_write">
         <h1><a href="/">자유게시판</a></h1>
-        <h4>글을 작성하는 공간입니다.</h4>
+        <h4>글을 수정합니다.</h4>
         <div id="write_area">
-            <form name="write" action="board_process.php" method="post">
+            <form action="modify_ok.php?idx=<?php echo $bno; ?>" method="post">
                 <div id="in_title">
-                    <textarea name="title" id="utitle" rows="1" cols="55" placeholder="제목" maxlength="100" required></textarea>
+                    <textarea name="title" id="utitle" rows="1" cols="55" placeholder="제목" maxlength="100" required><?php echo $board['title']; ?></textarea>
                 </div>
                 <div class="wi_line"></div>
                 <div id="in_name">
-                    <textarea name="name" id="uname" rows="1" cols="55" placeholder="글쓴이" maxlength="100" required></textarea>
-                    // 여기 세션 아이디 값 불러오기!
+                    <textarea name="name" id="uname" rows="1" cols="55" placeholder="글쓴이" maxlength="100" required><?php echo $board['name']; ?></textarea>
                 </div>
                 <div class="wi_line"></div>
                 <div id="in_content">
-                    <textarea name="content" id="ucontent" placeholder="내용" required></textarea>
+                    <textarea name="content" id="ucontent" placeholder="내용" required><?php echo $board['content']; ?></textarea>
                 </div>
                 <div id="in_pw">
                     <input type="password" name="pw" id="upw" placeholder="비밀번호" required />
-                    // 글 자체 비밀번호
                 </div>
                 <div class="bt_se">
-                    <input type="submit" value="작성"></button>
+                    <button type="submit">글 작성</button>
                 </div>
             </form>
         </div>
