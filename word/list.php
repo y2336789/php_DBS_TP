@@ -114,6 +114,12 @@ $sql->execute();
                 </div>
             </article>
         </section>
+        <div class="btnPrev">
+            <span>PREV WORD</span>
+        </div>
+        <div class="btnNext">
+            <span>Next WORD</span>
+        </div>
     </figure>
     <footer>
         <div class="inner">
