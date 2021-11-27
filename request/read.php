@@ -1,8 +1,6 @@
 <?php
 	require_once('../db/db.php');
 	$idx = $_GET['idx']; /* 주소창의 글 번호 가져오기 */
-	$query = "SELECT * FROM request WHERE idx=$idx";
-    $result = $db->query($query);
 	
 	$hit = "UPDATE request SET hits=hits+1 WHERE idx=$idx";
     $db->query($hit);
@@ -12,6 +10,10 @@
     $sql -> execute();
     $request = $sql -> fetch();
 
+    $sql3 = $db->prepare("SELECT * FROM request_reply WHERE req_num=:req_num");
+    $sql3 -> bindParam("req_num",$idx);
+    $sql3 -> execute();
+    
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -66,6 +68,33 @@
 			</ul>
 		</div>
 	</div>
+    <div class="reply_view">
+	<h3>댓글목록</h3>
+		<?php
+			while($reply = $sql3 -> fetch()) {
+		?>
+		<div class="dap_lo">
+			<div><b><?= $reply['name'] ?></b></div>
+			<div class="dap_to comt_edit"><?php echo nl2br("$reply[content]"); ?></div>
+			<div class="rep_me dap_to"><?php echo $reply['date']; ?></div>
+			<div class="rep_me rep_menu">
+				<a class="dat_edit_bt" href="#">수정</a>
+				<a class="dat_delete_bt" href="#">삭제</a>
+			</div>
+			<!-- 댓글 수정 폼 dialog -->
+			<!-- 댓글 삭제 비밀번호 확인 -->
+		</div>
+	<?php } ?>
+        <!--- 댓글 입력 폼 -->
+        <div class="dap_ins">
+            <form action="reply_ok.php?idx=<?php echo $idx; ?>" method="post">
+                <div style="margin-top:10px; ">
+                    <textarea name="reply_content" class="reply_content" id="re_content" ></textarea>
+                    <button id="rep_bt" class="re_bt">댓글</button>
+                </div>
+            </form>
+        </div>
+    </div><!--- 댓글 불러오기 끝 -->
 	<footer>
         <div class="inner">
             <div class="upper">

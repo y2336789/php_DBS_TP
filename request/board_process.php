@@ -2,11 +2,10 @@
     require_once('../db/db.php');
     session_start();
    
-    $name = $_POST['name'];
+    $name = $_SESSION['name'];
     $pw = $_POST['pw'];
     $title = $_POST['title'];
     $content = $_POST['content'];
-    // echo $name.','.$pw.','.$title.','.$content;
     
     $sql = $db -> prepare('INSERT INTO request 
     (name, pw, title, content, date) /*이 부분은 DB 테이블에서 만든 이름과 똑같이 입력해줍니다.*/
@@ -18,6 +17,6 @@
     $sql -> bindParam(':content',$content);
 
     $sql -> execute();
-    header('location:../main.php');
+    header('location:../request/board.php');
 
 ?>

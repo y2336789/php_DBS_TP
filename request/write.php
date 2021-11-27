@@ -9,6 +9,7 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome </title>
     <script src="https://kit.fontawesome.com/c47106c6a7.js" crossorigin="anoymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/write.css">
     <script defer src="js/ie.js"></script>
@@ -46,20 +47,19 @@ session_start();
         <div id="write_area">
             <form name="write" action="board_process.php" method="post">
                 <div id="in_title">
-                    <textarea name="title" id="utitle" rows="1" cols="55" placeholder="제목" maxlength="100" required></textarea>
+                    <textarea class="form-control" name="title" id="utitle" rows="1" placeholder="Title" maxlength="100" required></textarea>
                 </div>
-                <div class="wi_line"></div>
+                <!-- <div class="wi_line"></div>
                 <div id="in_name">
                     <textarea name="name" id="uname" rows="1" cols="55" placeholder="글쓴이" maxlength="100" required></textarea>
                     // 여기 세션 아이디 값 불러오기!
-                </div>
+                </div> -->
                 <div class="wi_line"></div>
                 <div id="in_content">
-                    <textarea name="content" id="ucontent" placeholder="내용" required></textarea>
+                    <textarea  class="form-control" rows="3" name="content" id="ucontent" placeholder="Content" required></textarea>
                 </div>
                 <div id="in_pw">
                     <input type="password" name="pw" id="upw" placeholder="비밀번호" required />
-                    // 글 자체 비밀번호
                 </div>
                 <div class="bt_se">
                     <input type="submit" value="작성"></button>

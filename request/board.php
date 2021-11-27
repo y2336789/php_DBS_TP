@@ -62,7 +62,9 @@ $sql->execute();
                 <tbody>
                     <tr>
                         <td width="70"><?= $request['idx'] ?></td>
-                        <td width="500"><a href="read.php?idx=<?= $request['idx'] ?>"><?= $request['title'] ?></a></td>
+                        <td width="500">
+                            <!-- 기존에 read.php에서 ck_read로 바꿈 -->
+                        <a href="ck_read.php?idx=<?= $request['idx'] ?>"><?= $request['title'] ?></a></td>
                         <td width="120"><?= $request['name'] ?></td>
                         <td width="100"><?= $request['date'] ?></td>
                         <td width="100"><?= $request['hits'] ?></td>
@@ -71,7 +73,14 @@ $sql->execute();
             <?php } ?>
         </table>
         <div id="write_btn">
-            <a href="write.php"><button>글쓰기</button></a>
+            <?php 
+                if (!isset($_SESSION['id'])) {
+                    echo '<a href="../member/login.php"><button>글쓰기</button></a>';
+                } else {
+                    echo '<a href="write.php"><button>글쓰기</button></a>';
+                }
+            ?>
+           
         </div>
     </div>
     <footer>

@@ -21,7 +21,7 @@ session_start();
 
             <ul id="gnb">
                 <li><a href="#">1</a></li>
-                <li><a href="#">2</a></li>
+                <li><a href="word/list.php">Word list</a></li>
                 <li><a href="request/board.php">Request</a></li>
                 <li><a href="#">4</a></li>
                 <li><a href="#">5</a></li>
