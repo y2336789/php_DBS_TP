@@ -8,7 +8,7 @@ if (isset($_POST['name'])){
     }
 }
 try {
-    include_once './db/db.php';
+    include_once '../db/db.php';
     $statement = $db->query($query);
     while($record = $statement->fetch(PDO::FETCH_ASSOC)){
         $result .= "<tr>";
