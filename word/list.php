@@ -1,10 +1,3 @@
-<?php
-require_once("../db/db.php");
-session_start();
-
-$sql = $db->prepare("SELECT * FROM word");
-$sql->execute();
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -55,9 +48,15 @@ $sql->execute();
         <section>
             <article class="on">
                 <div class="inner">
-                    <div class="title">
+                    <div class="title", onclick = "location.href = '../word/word_detail.php';">
                         <h1>
-                            단어1
+                            <?php
+                                include_once '../db/db.php';
+
+                                $statement = $db->query("SELECT * FROM word WHERE idx = 1");
+                                $row = $statement->fetch(PDO::FETCH_ASSOC);
+                                echo htmlentities($row['name']);
+                            ?>
                         </h1>
                         <div class="txt">
                             <h2>단어 뜻</h2>

@@ -10,7 +10,8 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome </title>
     <script src="https://kit.fontawesome.com/c47106c6a7.js" crossorigin="anoymous"></script>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css">
+    <link rel="stylesheet" href="css/style.css?ver=1">
     <script defer src="js/ie.js"></script>
 </head>
 
@@ -38,6 +39,18 @@ session_start();
                 }
                 ?>
             </ul>
+
+            <ul class="util2">
+                <form action='./search/search.php' method='POST'>
+                    <div class="search-box">
+                        <input type="text" class="search-txt" name="name" placeholder="Type to search">
+                        <a class="search-btn" href="#">
+                            <i class="fas fa-search"></i>
+                        </a>
+                    </div>
+                </form>
+            </ul>
+            
         </div>
     </header>
     <figure>
