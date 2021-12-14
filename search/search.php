@@ -3,8 +3,13 @@ require_once("../db/db.php");
 session_start();
 
 $fstr = $_POST['name'];
-$sql = $db->prepare("SELECT * FROM word WHERE wn_kor like '%$fstr%'");
-$sql->execute();
+if($fstr != NULL){
+    $sql = $db->prepare("SELECT * FROM word WHERE wn_kor like '%$fstr%'");
+    $sql->execute();
+} else {
+    $sql = $db->prepare("SELECT * FROM word WHERE wn_kor = 'NULL' ");
+    $sql->execute();
+}
 
 ?>
 

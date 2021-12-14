@@ -3,20 +3,17 @@ require_once("../db/db.php");
 session_start();
 
 $fstr = $_POST['name'];
-$sql = $db->prepare("SELECT * FROM word_eng WHERE wn_eng like '%$fstr%'");
-$sql->execute();
+if($fstr != NULL){
+    $sql = $db->prepare("SELECT * FROM word_eng WHERE wn_eng like '%$fstr%'");
+    $sql->execute();
+} else {
+    $sql = $db->prepare("SELECT * FROM word_eng WHERE wn_eng = 'NULL' ");
+    $sql->execute();
+}
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
-<style> 
-footer {
-    width: 100%;
-    background: #333;
-    padding: 100px 0px;
-    border-top: 1px solid #888;
-}
-</style>
 
 <head>
     <meta charset="UTF-8">
@@ -24,6 +21,7 @@ footer {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/board.css">
+    <link rel="stylesheet" href="../css/footer.css">
     <title>Request</title>
 </head>
 <body>
