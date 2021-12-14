@@ -22,7 +22,7 @@ $sql->execute();
 
 
 <body>
-    <?php include("header.php");?>
+    <?php include("../header.php");?>
     <div id="board_area">
         <h1>검색된 단어</h1>
         <h4>검색된 연관 단어들입니다. </h4>

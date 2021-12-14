@@ -38,7 +38,7 @@
             </ul>
     
             <ul class="util2">
-                <form action='./search/search.php' method='POST'>
+                <form action='/search/search.php' method='POST'>
                     <div class="search-box">
                         <input type="text" class="search-txt" name="name" placeholder="Type to search">
                         <a class="search-btn" href="#">

@@ -40,31 +40,7 @@ $sql2->execute();
 </head>
 
 <body>
-    <header>
-        <div class="inner">
-            <h1><a href="../main.php">Be Native</a></h1>
-
-            <ul id="gnb">
-                <li><a href="../wordzip/wordlist.php?page=1">Word zip</a></li>
-                <li><a href="../word/list.php">Word list</a></li>
-                <li><a href="../request/board.php">Request</a></li>
-                <li><a href="#">4</a></li>
-                <li><a href="#">5</a></li>
-            </ul>
-
-            <ul class="util">
-                <?php if (!isset($_SESSION['id'])) {
-                    echo '<li><a href="../member/login.php">Login</a></li>';
-                    echo '<li><a href="../member/register.php">Join</a></li>';
-                } else {
-                    echo '<div class="helloUser">Welcome ' . $_SESSION['name'] . '!</li>';
-                    echo '<li><a href="../member/member_process.php?mode=logout">Log out</a></li>';
-                    echo '<li><a href="../member/update.php">Info</a></li>';
-                }
-                ?>
-            </ul>
-        </div>
-    </header>
+    <?php include("../header.php");?>
     <div id="wordzip_area">
         <h1>All Slang</h1>
         <h4>모든 신조어들을 모아놓았습니다.</h4>
@@ -127,22 +103,7 @@ $sql2->execute();
       </ul>
     </div>
     </div>
-    <footer>
-        <div class="inner">
-            <div class="upper">
-                <h1>NAME</h1>
-
-            </div>
-
-            <div class="lower">
-                <address>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum, sunt?<br>
-                    TEL : XXX-XXX-XXXX C.P : 010-5193-6603
-                </address>
-                <p>2021 Database System TEAM '도원결의' &copy; copyright all right reserved.</p>
-            </div>
-        </div>
-    </footer>
+    <?php include("../footer.php");?>
 </body>
 
 </html>

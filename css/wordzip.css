@@ -49,21 +49,12 @@ ul li {
   margin-top: 20px;
   right: 0;
 }
-
-footer {
-  width: 100%;
-  background: #333;
-  padding: 100px 0px;
-  border-top: 1px solid #888;
-  bottom: -500px;
-  position: absolute;
-}
-
 /* 페이지 개수 */
 #page_num {
 	font-size: 14px;
 	margin-left: 260px;
 	margin-top:30px; 
+  margin-bottom: 20px;
 }
 #page_num ul li {
 	float: left;
