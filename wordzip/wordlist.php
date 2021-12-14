@@ -36,7 +36,6 @@ $sql2->execute();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/wordzip.css">
-    <link rel="stylesheet" href="../css/footer.css">
     <title>word</title>
 </head>
 
@@ -60,7 +59,7 @@ $sql2->execute();
                         <td width="70"><?= $request['idx'] ?></td>
                         <td width="500">
                             <!-- 기존에 read.php에서 wordread로 바꿈 -->
-                        <a href="wordread.php?idx=<?= $request['idx'] ?>"><?= $request['wordname_kor'] ?></a></td>
+                        <a href="/wordzip/wordread.php?idx=<?= $request['idx'] ?>"><?= $request['wn_kor'] ?></a></td>
                     </tr>
                 </tbody>
             <?php } ?>
@@ -104,7 +103,22 @@ $sql2->execute();
       </ul>
     </div>
     </div>
-    <?php include("../footer.php");?>
+    <footer>
+        <div class="inner">
+            <div class="upper">
+                <h1>NAME</h1>
+
+            </div>
+
+            <div class="lower">
+                <address>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum, sunt?<br>
+                    TEL : XXX-XXX-XXXX C.P : 010-5193-6603
+                </address>
+                <p>2021 Database System TEAM '도원결의' &copy; copyright all right reserved.</p>
+            </div>
+        </div>
+    </footer>
 </body>
 
 </html>

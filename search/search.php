@@ -3,8 +3,9 @@ require_once("../db/db.php");
 session_start();
 
 $fstr = $_POST['name'];
-$sql = $db->prepare("SELECT * FROM word WHERE wordname_kor like '%$fstr%'");
+$sql = $db->prepare("SELECT * FROM word WHERE wn_kor like '%$fstr%'");
 $sql->execute();
+
 ?>
 
 <!DOCTYPE html>
@@ -16,7 +17,6 @@ $sql->execute();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/board.css">
-    <link rel="stylesheet" href="../css/footer.css">
     <title>Request</title>
 </head>
 
@@ -35,7 +35,6 @@ $sql->execute();
                     <th width="150">영어 이름</th>
                     <th width="350">한글 해석</th>
                     <th width="350">영어 해석</th>
-                    <th width="250">예시</th>
                 </tr>
             </thead>
             <?php
@@ -43,18 +42,32 @@ $sql->execute();
             ?>
                 <tbody>
                     <tr>
-                        <td width="70"><?= $request['idx'] ?></td>
-                        <td width="150"><?= $request['wordname_kor'] ?></td>
-                        <td width="150"><?= $request['wordname_eng'] ?></td>
-                        <td width="350"><?= $request['wordmeaning_kor'] ?></td>
-                        <td width="350"><?= $request['wordmeaning_eng'] ?></td>
-                        <td width="250"><?= $request['word_example'] ?></td>
+                        <td width="70"><a href="/wordzip/wordread.php?idx=<?= $request['idx'] ?>"><?= $request['idx'] ?></a></td>
+                        <td width="150"><a href="/wordzip/wordread.php?idx=<?= $request['idx'] ?>"><?= $request['wn_kor'] ?></a></td>
+                        <td width="150"><a href="/wordzip/wordread.php?idx=<?= $request['idx'] ?>"><?= $request['wn_eng'] ?></a></td>
+                        <td width="350"><a href="/wordzip/wordread.php?idx=<?= $request['idx'] ?>"><?= $request['wm_kor'] ?></a></td>
+                        <td width="350"><a href="/wordzip/wordread.php?idx=<?= $request['idx'] ?>"><?= $request['wm_eng'] ?></a></td>
                     </tr>
                 </tbody>
             <?php } ?>
         </table>
     </div>
-    <?php include("../footer.php");?>
+
+
+    <footer>
+        <div class="inner">
+            <div class="upper">
+                <h1>NAME</h1>
+            </div>
+            <div class="lower">
+                <address>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum, sunt?<br>
+                    TEL : XXX-XXX-XXXX C.P : 010-5193-6603
+                </address>
+                <p>2021 Database System TEAM '도원결의' &copy; copyright all right reserved.</p>
+            </div>
+        </div>
+    </footer>
 </body>
 
 </html>
