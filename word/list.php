@@ -1,5 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+<?php
+require_once("../db/db.php");
+session_start();
+
+$sql = $db->prepare("SELECT * FROM word_sentence order by rand() limit 5");
+$sql->execute();
+?>
 
 <head>
     <meta charset="UTF-8">
@@ -23,46 +30,23 @@
 		</ul>
 
 <div class="swiper-wrapper">
+	<?php
+		$sql2 = $db->prepare("SELECT * FROM word WHERE idx=:idx");
+		while ($request = $sql->fetch()) {
+			$sql2 -> bindParam(':idx',$request['w_idx']);
+			$sql2 -> execute();
+			$result = $sql2->fetch();
+	?>
 	<div class="swiper-slide">
 		<div class="inner">
 			<div class="con">
-				<h2>Ipsum dolor sit amet.</h2>
-				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui, optio.</p>
+				<h2><?= $result['wn_kor'] ?></h2>
+				<p><?= $request['example'] ?></p>
 			</div>
 		</div>
 	</div>
-	<div class="swiper-slide">
-		<div class="inner">
-			<div class="con">				
-				<h2>Lorem ipsum dolor.</h2>
-				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati eum doloribus voluptate officiis excepturi!</p>
-			</div>
-		</div>
-	</div>
-	<div class="swiper-slide">
-		<div class="inner">
-			<div class="con">
-				<h2>Dolor ipsum  sit.</h2>
-				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi officiis iste nam quae.</p>
-			</div>
-		</div>
-	</div>
-	<div class="swiper-slide">
-		<div class="inner">
-			<div class="con">
-				<h2>Consectetur adicing.</h2>
-				<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit optio debitis sapiente!</p>
-			</div>
-		</div>
-	</div>
-	<div class="swiper-slide">
-		<div class="inner">
-			<div class="con">
-				<h2>Dicta! elit. </h2>
-				<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eos, accusantium corrupti.</p>
-			</div>
-		</div>
-	</div>
+	
+	<?php } ?>
 </div>
 
 		<!-- 좌우버튼 -->
