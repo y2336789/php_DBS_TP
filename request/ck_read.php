@@ -28,7 +28,7 @@ $request = $sql -> fetch();
 </div>
 	 <?php
 	 	$bpw = $request['pw'];
-		echo '<div>'. $request['pw'] .'</div>';
+		// echo '<div>'. $request['pw'] .'</div>';
 	 	if(isset($_POST['pw_chk'])) //만약 pw_chk POST값이 있다면
 	 	{
 	 		$pwk = $_POST['pw_chk']; // $pwk변수에 POST값으로 받은 pw_chk를 넣습니다.

@@ -10,7 +10,7 @@ if(isset($_GET['page'])){
 $sql = $db->prepare("SELECT count(*) FROM word");
 $sql->execute();
 $row_num = $sql->fetchColumn(); //게시판 총 레코드 수
-$list = 15; //한 페이지에 보여줄 개수
+$list = 10; //한 페이지에 보여줄 개수
 $block_ct = 5; //블록당 보여줄 페이지 개수
 
 $block_num = ceil($page/$block_ct); // 현재 페이지 블록 구하기
@@ -36,6 +36,7 @@ $sql2->execute();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/wordzip.css">
+    <link rel="stylesheet" href="../css/footer.css">
     <title>word</title>
 </head>
 

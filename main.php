@@ -49,22 +49,7 @@ session_start();
 
         </div>
     </section>
-    <footer>
-        <div class="inner">
-            <div class="upper">
-                <h1>NAME</h1>
-
-            </div>
-
-            <div class="lower">
-                <address>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum, sunt?<br>
-                    TEL : XXX-XXX-XXXX C.P : 010-5193-6603
-                </address>
-                <p>2021 Database System TEAM '도원결의' &copy; copyright all right reserved.</p>
-            </div>
-        </div>
-    </footer>
+    <?php include("footer.php");?>
 </body>
 
 </html>

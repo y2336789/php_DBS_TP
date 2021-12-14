@@ -23,6 +23,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="../css/style.css">
 	<link rel="stylesheet" href="../css/read.css">
+	<link rel="stylesheet" href="../css/footer.css">
 	<title>Request Board</title>
 </head>
 <body>
@@ -64,30 +65,20 @@
 	<?php } ?>
         <!--- 댓글 입력 폼 -->
         <div class="dap_ins">
+			<?php 
+				if (!isset($_SESSION['id'])) {
+					echo '<a href="../member/login.php"></a>';
+				}
+			?>		
             <form action="reply_ok.php?idx=<?php echo $idx; ?>" method="post">
-                <div style="margin-top:10px; ">
+                <div style="margin-top:10px; " class="inputt">
                     <textarea name="reply_content" class="reply_content" id="re_content" ></textarea>
                     <button id="rep_bt" class="re_bt">댓글</button>
                 </div>
             </form>
         </div>
     </div><!--- 댓글 불러오기 끝 -->
-	<footer>
-        <div class="inner">
-            <div class="upper">
-                <h1>NAME</h1>
-
-            </div>
-
-            <div class="lower">
-                <address>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum, sunt?<br>
-                    TEL : XXX-XXX-XXXX C.P : 010-5193-6603
-                </address>
-                <p>2021 Database System TEAM '도원결의' &copy; copyright all right reserved.</p>
-            </div>
-        </div>
-    </footer>
+	<?php include("../footer.php");?>
 </body>
 
 </html>

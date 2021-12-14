@@ -4,9 +4,10 @@ header {
 
 #wordzip_read {
 	margin: 0 auto;
-	width:50%;
+	width:45%;
 	position: relative;
 	word-break:break-all;
+	margin-bottom: 50px;
 }
 #user_info {
 	font-size:14px;
@@ -37,9 +38,10 @@ header {
 
 /* 댓글 */
 .reply_view {
-	width:900px;
+	width:45%;
 	margin-top:100px; 
 	word-break:break-all;
+	margin: 0 auto;
 }
 .dap_lo {
 	font-size: 14px;
@@ -104,4 +106,4 @@ footer {
 	border-top: 1px solid #888;
 	bottom: 0px;
 	position: absolute;
-  }
+}

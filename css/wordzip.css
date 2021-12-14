@@ -25,6 +25,7 @@ ul li {
 /* 게시판 목록 */
 #wordzip_area {
   width: 900px;
+  height: 33%;
   position: relative;
 }
 .list-table {
