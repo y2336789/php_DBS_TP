@@ -100,7 +100,7 @@ figure section article .inner {
     box-shadow: 10px 10px 20px rgba(0,0,0,0.1);
     opacity: 0.6;
     transform: scale(0.8);
-    transition: opacity 1s, transform : 1s;
+    transition: opacity 1s;
 }
 
 figure section article .inner .txt h2{

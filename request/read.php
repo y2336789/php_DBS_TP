@@ -41,8 +41,8 @@
 		<div id="bo_ser">
 			<ul>
 				<li><a href="board.php">[목록으로]</a></li>
-				<li><a href="modify.php?idx=<?php echo $request['idx']; ?>">[수정]</a></li>
-				<li><a href="delete.php?idx=<?php echo $request['idx']; ?>">[삭제]</a></li>
+				<!-- <li><a href="modify.php?idx=<?php echo $request['idx']; ?>">[수정]</a></li> -->
+				<li><a href="delete.php?idx=<?= $request['idx'] ?>">[삭제]</a></li>
 			</ul>
 		</div>
 	</div>
