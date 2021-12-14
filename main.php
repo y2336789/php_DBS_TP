@@ -21,7 +21,8 @@ session_start();
         <video src="img/talking.mp4" autoplay muted loop></video>
         <div class="inner">
             <h1>Do you know Korean Slang?</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum, labore. Soluta, error! Beatae blanditiis quam ut modi nemo porro at voluptatibus iste adipisci! Provident!</p>
+            <p>This dictionary is free of charge!<br>
+            </p>
             <a href="member/register.php">Join us!</a>
         </div>
     </figure>

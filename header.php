@@ -27,11 +27,11 @@
     
             <ul class="util">
                 <?php if (!isset($_SESSION['id'])) {
-                    echo '<li><a href="member/login.php">Login</a></li>';
-                    echo '<li><a href="member/register.php">Join</a></li>';
+                    echo '<li><a href="/member/login.php">Login</a></li>';
+                    echo '<li><a href="/member/register.php">Join</a></li>';
                 } else {
                     echo '<div class="helloUser">Welcome ' . $_SESSION['name'] . '!</li>';
-                    echo '<li><a href="member/member_process.php?mode=logout">Log out</a></li>';
+                    echo '<li><a href="/member/member_process.php?mode=logout">Log out</a></li>';
                 }
                 ?>
             </ul>

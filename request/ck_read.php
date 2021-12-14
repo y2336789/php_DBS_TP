@@ -38,5 +38,5 @@ $request = $sql -> fetch();
 				<script type="text/javascript">location.replace("read.php?idx=<?php echo $request["idx"]; ?>");</script><!-- pwk와 bpw값이 같으면 read.php로 보내고 -->
 			<?php 
 			}else{ ?>
-				<script type="text/javascript">alert('비밀번호가 틀립니다'); </script>- 아니면 비밀번호가 틀리다는 메시지를 보여줍니다
+				<script type="text/javascript">alert('비밀번호가 틀립니다'); </script>
 			<?php } } ?>

@@ -96,7 +96,7 @@
         <!--- 댓글 입력 폼 -->
         <div class="dap_ins">
             <form action="wordreply_ok.php?idx=<?php echo $idx; ?>" method="post">
-                <div style="margin-top:10px; ">
+                <div style="margin-top:10px; " class="inputt">
                     <textarea name="reply_content" class="reply_content" id="re_content" ></textarea>
                     <button id="rep_bt" class="re_bt">댓글</button>
                 </div>

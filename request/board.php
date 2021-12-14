@@ -30,7 +30,6 @@ $sql->execute();
                     <th width="500">제목</th>
                     <th width="120">글쓴이</th>
                     <th width="100">작성일</th>
-                    <th width="100">조회수</th>
                 </tr>
             </thead>
             <?php
@@ -44,7 +43,6 @@ $sql->execute();
                         <a href="ck_read.php?idx=<?= $request['idx'] ?>"><?= $request['title'] ?></a></td>
                         <td width="120"><?= $request['name'] ?></td>
                         <td width="100"><?= $request['date'] ?></td>
-                        <td width="100"><?= $request['hits'] ?></td>
                     </tr>
                 </tbody>
             <?php } ?>
