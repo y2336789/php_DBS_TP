@@ -18,7 +18,7 @@
             <h1><a href="/main.php">Be Native</a></h1>
     
             <ul id="gnb">
-                <li><a href="#">1</a></li>
+                <li><a href="/wordzip/wordlist.php?page=1">Word zip</a></li>
                 <li><a href="/word/list.php">Word list</a></li>
                 <li><a href="/request/board.php">Request</a></li>
                 <li><a href="#">4</a></li>
