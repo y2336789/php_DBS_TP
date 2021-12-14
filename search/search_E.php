@@ -3,7 +3,7 @@ require_once("../db/db.php");
 session_start();
 
 $fstr = $_POST['name'];
-$sql = $db->prepare("SELECT * FROM word WHERE wordname_kor like '%$fstr%'");
+$sql = $db->prepare("SELECT * FROM word WHERE wn_kor like '%$fstr%'");
 $sql->execute();
 ?>
 
@@ -16,11 +16,9 @@ $sql->execute();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/board.css">
+    <link rel="stylesheet" href="../css/footer.css">
     <title>Request</title>
 </head>
-
-
-
 <body>
     <?php include("../header.php"); ?>
     <div id="board_area">
@@ -33,21 +31,7 @@ $sql->execute();
             <input type="text" name="name">
         </form>
     </div>
-
-    <footer>
-        <div class="inner">
-            <div class="upper">
-                <h1>NAME</h1>
-            </div>
-            <div class="lower">
-                <address>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum, sunt?<br>
-                    TEL : XXX-XXX-XXXX C.P : 010-5193-6603
-                </address>
-                <p>2021 Database System TEAM '도원결의' &copy; copyright all right reserved.</p>
-            </div>
-        </div>
-    </footer>
+    <?php include("../footer.php"); ?>
 </body>
 
 </html>

@@ -53,9 +53,11 @@ ul li {
 /* 페이지 개수 */
 #page_num {
 	font-size: 14px;
-	margin-left: 260px;
+	margin-left: 50px;
 	margin-top:30px; 
   margin-bottom: 20px;
+  width: 100%;
+  display: flex;
 }
 #page_num ul li {
 	float: left;

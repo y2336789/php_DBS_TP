@@ -32,7 +32,6 @@
                 } else {
                     echo '<div class="helloUser">Welcome ' . $_SESSION['name'] . '!</li>';
                     echo '<li><a href="member/member_process.php?mode=logout">Log out</a></li>';
-                    echo '<li><a href="member/update.php">Info</a></li>';
                 }
                 ?>
             </ul>

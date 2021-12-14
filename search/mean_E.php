@@ -3,12 +3,20 @@ require_once("../db/db.php");
 session_start();
 
 $fstr = $_POST['name'];
-$sql = $db->prepare("SELECT * FROM word_eng WHERE wordname_eng like '%$fstr%'");
+$sql = $db->prepare("SELECT * FROM word_eng WHERE wn_eng like '%$fstr%'");
 $sql->execute();
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
+<style> 
+footer {
+    width: 100%;
+    background: #333;
+    padding: 100px 0px;
+    border-top: 1px solid #888;
+}
+</style>
 
 <head>
     <meta charset="UTF-8">
@@ -18,9 +26,6 @@ $sql->execute();
     <link rel="stylesheet" href="../css/board.css">
     <title>Request</title>
 </head>
-
-
-
 <body>
     <?php include("../header.php");?>
     <div id="board_area">
@@ -38,29 +43,14 @@ $sql->execute();
             ?>
                 <tbody>
                     <tr>
-                        <td width="150"><?= $request['wordname_eng'] ?></td>
-                        <td width="900"><?= $request['wordmeaning_eng'] ?></td>
+                        <td width="150"><?= $request['wn_eng'] ?></td>
+                        <td width="900"><?= $request['wm_eng'] ?></td>
                     </tr>
                 </tbody>
             <?php } ?>
         </table>
     </div>
-
-
-    <footer>
-        <div class="inner">
-            <div class="upper">
-                <h1>NAME</h1>
-            </div>
-            <div class="lower">
-                <address>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum, sunt?<br>
-                    TEL : XXX-XXX-XXXX C.P : 010-5193-6603
-                </address>
-                <p>2021 Database System TEAM '도원결의' &copy; copyright all right reserved.</p>
-            </div>
-        </div>
-    </footer>
+    <?php include("../footer.php"); ?>
 </body>
 
 </html>
