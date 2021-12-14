@@ -21,17 +21,18 @@
                 <li><a href="/wordzip/wordlist.php?page=1">Word zip</a></li>
                 <li><a href="/word/list.php">Word list</a></li>
                 <li><a href="/request/board.php">Request</a></li>
-                <li><a href="#">4</a></li>
-                <li><a href="#">5</a></li>
+                <li><a href="/search/search_K.php">K_mean</a></li>
+                <li><a href="/search/search_E.php">E_mean</a></li>
             </ul>
     
             <ul class="util">
                 <?php if (!isset($_SESSION['id'])) {
-                    echo '<li><a href="/member/login.php">Login</a></li>';
-                    echo '<li><a href="/member/register.php">Join</a></li>';
+                    echo '<li><a href="member/login.php">Login</a></li>';
+                    echo '<li><a href="member/register.php">Join</a></li>';
                 } else {
                     echo '<div class="helloUser">Welcome ' . $_SESSION['name'] . '!</li>';
-                    echo '<li><a href="/member/member_process.php?mode=logout">Log out</a></li>';
+                    echo '<li><a href="member/member_process.php?mode=logout">Log out</a></li>';
+                    echo '<li><a href="member/update.php">Info</a></li>';
                 }
                 ?>
             </ul>

@@ -1,0 +1,54 @@
+<?php
+require_once("../db/db.php");
+session_start();
+
+$fstr = $_POST['name'];
+$sql = $db->prepare("SELECT * FROM word WHERE wordname_kor like '%$fstr%'");
+$sql->execute();
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/board.css">
+    <title>Request</title>
+</head>
+
+
+
+<body>
+    <?php include("../header.php"); ?>
+    <div id="board_area">
+        <h1>신조어 한국사전</h1>
+        <h4>한국어로 검색할 신조어를 입력해주세요.</h4>
+
+        <h4> _ </h4>
+
+        <form action='/search/mean_K.php' method='POST'>
+            <input type="text" name="name">
+        </form>
+    </div>
+
+
+    <footer>
+        <div class="inner">
+            <div class="upper">
+                <h1>NAME</h1>
+            </div>
+            <div class="lower">
+                <address>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum, sunt?<br>
+                    TEL : XXX-XXX-XXXX C.P : 010-5193-6603
+                </address>
+                <p>2021 Database System TEAM '도원결의' &copy; copyright all right reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
