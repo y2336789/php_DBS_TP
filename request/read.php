@@ -26,30 +26,7 @@
 	<title>Request Board</title>
 </head>
 <body>
-	<header>
-        <div class="inner">
-            <h1><a href="../main.php">Be Native</a></h1>
-
-            <ul id="gnb">
-                <li><a href="#">1</a></li>
-                <li><a href="#">2</a></li>
-                <li><a href="board.php">Request</a></li>
-                <li><a href="#">4</a></li>
-                <li><a href="#">5</a></li>
-            </ul>
-            <ul class="util">
-                <?php if (!isset($_SESSION['id'])) {
-                    echo '<li><a href="../member/login.php">Login</a></li>';
-                    echo '<li><a href="../member/register.php">Join</a></li>';
-                } else {
-                    echo '<div class="helloUser">Welcome ' . $_SESSION['name'] . '!</li>';
-                    echo '<li><a href="../member/member_process.php?mode=logout">Log out</a></li>';
-                    echo '<li><a href="../member/update.php">Info</a></li>';
-                }
-                ?>
-            </ul>
-        </div>
-    </header>
+    <?php include("../header.php");?>
 	<div id="board_read">
 		<h2><?php echo $request['title']; ?></h2>
 			<div id="user_info">

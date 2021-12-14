@@ -13,46 +13,10 @@ session_start();
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css">
     <link rel="stylesheet" href="css/style.css?ver=1">
     <script defer src="js/ie.js"></script>
+    </script>
 </head>
-
 <body>
-    <header>
-        <div class="inner">
-            <h1><a href="main.php">Be Native</a></h1>
-
-            <ul id="gnb">
-                <li><a href="#">1</a></li>
-                <li><a href="word/list.php">Word list</a></li>
-                <li><a href="request/board.php">Request</a></li>
-                <li><a href="#">4</a></li>
-                <li><a href="#">5</a></li>
-            </ul>
-
-            <ul class="util">
-                <?php if (!isset($_SESSION['id'])) {
-                    echo '<li><a href="member/login.php">Login</a></li>';
-                    echo '<li><a href="member/register.php">Join</a></li>';
-                } else {
-                    echo '<div class="helloUser">Welcome ' . $_SESSION['name'] . '!</li>';
-                    echo '<li><a href="member/member_process.php?mode=logout">Log out</a></li>';
-                    echo '<li><a href="member/update.php">Info</a></li>';
-                }
-                ?>
-            </ul>
-
-            <ul class="util2">
-                <form action='./search/search.php' method='POST'>
-                    <div class="search-box">
-                        <input type="text" class="search-txt" name="name" placeholder="Type to search">
-                        <a class="search-btn" href="#">
-                            <i class="fas fa-search"></i>
-                        </a>
-                    </div>
-                </form>
-            </ul>
-            
-        </div>
-    </header>
+    <?php include("header.php");?>
     <figure>
         <video src="img/talking.mp4" autoplay muted loop></video>
         <div class="inner">
